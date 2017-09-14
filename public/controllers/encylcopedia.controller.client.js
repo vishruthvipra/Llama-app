@@ -67,7 +67,6 @@
         }
 
         function findAllSensors() {
-
                 for (var i in sensors) {
                     setMarker(map1, sensors[i].location, sensors[i].area, sensors[i].sensorType);
                 }
