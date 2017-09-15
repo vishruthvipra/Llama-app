@@ -6,6 +6,7 @@
     angular
         .module("LlamaApp")
         .controller("MapController", mapController);
+
     function mapController() {
         var vm = this;
         vm.locations = ["Australia: 400 thousand", "Argentina: 500 thousand", "Bolivia: 700 thousand",

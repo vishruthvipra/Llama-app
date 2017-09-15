@@ -6,6 +6,7 @@
     angular
         .module("LlamaApp")
         .controller("QuizController", quizController);
+
     function quizController() {
         var vm = this;
         vm.score = false;
@@ -69,7 +70,7 @@
         var totalsubmits = 10;
 
         function init() {
-            // vm.question = questions.shift();
+
         }
 
         init();

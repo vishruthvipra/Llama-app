@@ -8,6 +8,10 @@
         .controller("NutritionController", nutritionController);
 
     function nutritionController() {
-        var vm = this;
+        function init() {
+
+        }
+
+        init();
     }
 })();

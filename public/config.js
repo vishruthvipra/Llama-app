@@ -37,6 +37,11 @@
                 controller: "EncyclopediaController",
                 controllerAs: "model"
             })
+            .when("/dev", {
+                templateUrl: "views/developer.html",
+                controller: "DevController",
+                controllerAs: "model"
+            })
             .otherwise({
                 templateUrl: "views/homepage.html"
             });

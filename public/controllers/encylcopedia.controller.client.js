@@ -42,7 +42,13 @@
             "Family: Camelidae",
             "Genus: Lama",
             "Species: L. glama"
-        ]
+        ];
+
+        function init() {
+
+        }
+
+        init();
     }
 })();
 
