@@ -27,9 +27,12 @@
             " Motive: To display colour transition skills, creativity in shaping content in a ul and div tag.",
 
             "Quiz: A fun interactive game for the user to learn more about Llamas with scores declared after " +
-            "answering all 10 questions with the questions where the user had given wrong answers." +
+            "answering all 10 questions with the questions where the user had given wrong answers. " +
+            "The quiz fetches questions from the server which contains the questions and answers thereby hiding " +
+            "the answers from the user." +
             " Motive: To display creativity in making sure user absorbs the knowledge about Llamas and use of" +
-            " bootstrap and angular elements for responsiveness and design"
+            " bootstrap and angular elements for responsiveness and design. To also display use of RESTful API to" +
+            " communicate with the server."
         ];
 
         function init() {

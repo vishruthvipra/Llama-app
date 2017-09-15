@@ -10,5 +10,7 @@ app.use(express.static(__dirname + '/public'));
 var connectionString = 'mongodb://llamauser:llamapass@ds127564.mlab.com:27564/llama-app';
 mongoose.connect(connectionString);
 
+require("./serverfiles/quiz.service.server.js")(app);
+
 var port = process.env.PORT || 3000;
 app.listen(port);
