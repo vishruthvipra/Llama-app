@@ -6,8 +6,8 @@
     angular
         .module("LlamaApp")
         .controller("HomeController", homeController);
-    function homeController($location) {
+
+    function homeController() {
         var vm = this;
-        console.log("entered home")
     }
 })();

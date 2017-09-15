@@ -1,13 +1,74 @@
-<nav class="menu">
-    <input type="checkbox" class="menu-open" name="menu-open" id="menu-open" />
-    <label class="menu-open-button" for="menu-open">
-        <span class="lines line-1"></span>
-        <span class="lines line-2"></span>
-        <span class="lines line-3"></span>
-        <!--<img id="llamapic" src="../images/llama.png">-->
-    </label>
-    <a href="#/nutrition" class="menu-item item-1"> <i class="fa fa-cutlery"></i> </a>
-    <a href="#/llama_map" class="menu-item item-2"> <i class="fa fa-map"></i> </a>
-    <a href="#/quiz" class="menu-item item-3"> <i class="fa fa-pencil-square-o"></i> </a>
-    <a href="#/encyclopedia" class="menu-item item-4"> <i class="fa fa-graduation-cap"></i> </a>
+<nav class="navbar navbar-inverse bg-inverse navbar-fixed-top">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-header pull-left">
+            <a class="navbar-brand" href="#/home">
+                <span class="pull-right glyphicon glyphicon-menu-left"></span>
+            </a>
+            <span class="navbar-brand">LLAMA Quiz</span>
+        </div>
+    </nav>
+
 </nav>
+
+<br>
+<div class="container-fluid" ng-hide="model.completed">
+    <h4 class="h2-settings">
+        Below are a series of True/False questions (10 questions). Choose the option you feel is correct.
+    </h4>
+    <div class="inbox-body">
+    <div class="facts container-fluid" ng-repeat="ques in model.questions" ng-show="ques.val">
+        <p>{{ques.question}}</p>
+        <hr>
+        <div class="row">
+            <div class="col-xs-6">
+                <label class="radio-inline"><input type="radio" ng-model="bool" ng-value="1">True</label>
+                <label class="radio-inline"><input type="radio" ng-model="bool" ng-value="2">False</label>
+            </div>
+
+            <div class="col-xs-6">
+                <button ng-show="bool" ng-click="model.nextQuestion(bool, ques)" class="wrap-text btn btn-success btn-block" type="button">
+                    Submit
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="container-fluid" ng-show="model.score">
+    <table class="table table-hover table-bordered">
+        <thead>
+        <tr class="success">
+            <th colspan="2">
+                Your score  = {{model.points}}
+            </th>
+        </tr>
+        <tr class="success">
+            <th colspan="2">
+                Questions that you answered wrong
+            </th>
+        </tr>
+            <tr class="success">
+                <th>
+                    Question
+                </th>
+                <th>
+                    Correct Answer
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+        <tr class="success" ng-repeat="qa in model.wronganswers">
+            <td>
+                {{qa.question}}
+            </td>
+            <td>
+                {{qa.answer}}
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<br>

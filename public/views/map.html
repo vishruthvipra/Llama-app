@@ -1,1 +1,61 @@
-<div id="gmaps"></div>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-header pull-left">
+        <a class="navbar-brand" href="#/home">
+            <span class="pull-right glyphicon glyphicon-menu-left"></span>
+        </a>
+        <span class="navbar-brand">LLAMA on Map</span>
+    </div>
+</nav>
+
+<br>
+<div class="container-fluid">
+    <div id="gmaps"></div>
+    <div class="row hidden-xs">
+        <div class="col-xs-3">
+            <h2 class="h2-settings">
+                Habitat
+            </h2>
+            <ul class="list-group">
+                <li class="wrap-text list-group-item head" ng-repeat="loc in model.locations">
+                    {{loc}}
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-xs-9">
+            <h2 class="h2-settings">
+                Adaptations
+            </h2>
+            <div class="container-fluid facts" ng-repeat="fact in model.adaptations">
+                {{fact}}
+            </div>
+        </div>
+    </div>
+
+    <div class="visible-xs">
+            <h2 class="h2-settings">
+                Habitat
+            </h2>
+            <ul class="list-group">
+                <li class="wrap-text list-group-item head" ng-repeat="loc in model.locations">
+                    {{loc}}
+                </li>
+            </ul>
+
+            <h2 class="h2-settings">
+                Adaptations
+            </h2>
+            <div class="container-fluid facts" ng-repeat="fact in model.adaptations">
+                {{fact}}
+            </div>
+        </div>
+</div>
+
+<hr>
+
+<div class="container-fluid">
+    <p><b>Note:</b></p>
+    <p>All content posted above are shared without permission</p>
+    <p>I do not own any rights to the content.</p>
+</div>
+<br>

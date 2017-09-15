@@ -6,73 +6,43 @@
     angular
         .module("LlamaApp")
         .controller("EncyclopediaController", encyclopediaController);
-    function encyclopediaController($location) {
+    function encyclopediaController() {
         var vm = this;
-        var map1, infoWindow, weathermap;
-        var sensors = []
+        vm.wiki = [
+            "Llamas are members of the camelid, or camel, family.",
 
-        function init() {
-            initMap();
-            findAllSensors();
-        }
+            " Camelids first appeared on the Central Plains of North America about 40 million years ago." +
+            "About 3 million years ago, llamas' ancestors migrated to South America.",
 
-        init();
+            "Llamas were first domesticated and used as pack animals 4,000 to 5,000 years ago by Indians " +
+            "in the Peruvian highlands.",
 
+            "Llamas can grow as much as 6 feet tall.",
 
-        function initMap() {
-            weathermap = {lat: parseFloat(latitude), lng: parseFloat(longitude)};
-            map1 = new google.maps.Map($("#gmaps")[0], {
-                zoom: 11,
-                center: weathermap
-            });
+            "Llamas weigh 280 to 450 pounds and can carry about a quarter of their body weight," +
+            "so a 400-pound male llama can carry about 100 pounds on a trek of 10 to 12 miles with no problem.",
 
-            map2 = new google.maps.Map($("#gmap")[0], {
-                zoom: 11,
-                center: weathermap
-            });
+            "Llamas know their own limits. If you try to overload a llama with too much weight," +
+            "the llama is likely to lie down or simply refuse to move.",
 
-            google.maps.event.addDomListenerOnce(map1, 'idle', function () {
-                google.maps.event.addDomListener(window, 'resize', function () {
-                    map1.setCenter(weathermap);
-                });
-            });
-        }
+            "In the Andes Mountains of Peru, llama fleece has been shorn and used in textiles for about 6,000 years." +
+            "Llama wool is light, warm and water-repellent.",
 
-        function setMarker(map, location, title, content) {
-            latitude = parseFloat(location.latitude);
-            longitude = parseFloat(location.longitude);
+            "Llamas are hardy and well suited to harsh environments.",
 
-            var markerOptions = {
-                position: {lat: latitude, lng: longitude},
-                map: map,
-                title: title
-            };
+            "Llamas are smart and easy to train.",
 
-            var marker = new google.maps.Marker(markerOptions);
-            markers.push(marker);
-
-            google.maps.event.addListener(marker, 'click', function () {
-                // close window if not undefined
-                if (infoWindow !== void 0) {
-                    infoWindow.close();
-                }
-                // create new window
-                var infoWindowOptions = {
-                    content: content
-                };
-                infoWindow = new google.maps.InfoWindow(infoWindowOptions);
-                infoWindow.open(map, marker);
-            });
-
-        }
-
-        function findAllSensors() {
-                for (var i in sensors) {
-                    setMarker(map1, sensors[i].location, sensors[i].area, sensors[i].sensorType);
-                }
-
-
-        }
+            "Llamas are vegetarians and have efficient digestive systems."
+        ];
+        vm.classification = [
+            "Kingdom: Animalia",
+            "Phylum: Chordata",
+            "Class: Mammalia",
+            "Order: Artiodactyla",
+            "Family: Camelidae",
+            "Genus: Lama",
+            "Species: L. glama"
+        ]
     }
 })();
 

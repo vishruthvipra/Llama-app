@@ -6,8 +6,8 @@
     angular
         .module("LlamaApp")
         .controller("NutritionController", nutritionController);
-    function nutritionController($location) {
+
+    function nutritionController() {
         var vm = this;
-        console.log("entered nutrtion")
     }
 })();
