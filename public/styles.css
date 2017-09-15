@@ -303,7 +303,7 @@ body {
 }
 
 .head {
-    text-align: center;
+    text-align: center !important;
 }
 
 table {
@@ -361,3 +361,4 @@ table {
     color: black;
     margin-bottom: 10px;
 }
+

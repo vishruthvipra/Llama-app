@@ -76,7 +76,6 @@
         init();
 
         function nextQuestion(bool, question) {
-
             if(bool === 1 && question.answer) {
                 vm.points += 1;
             }
@@ -93,7 +92,6 @@
                 vm.score = true;
                 vm.completed = true;
             }
-
         }
     }
 })();
